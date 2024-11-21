@@ -22,14 +22,6 @@ const handleSubmit = async (event) => {
     
     collectData()
 
-    // const response = await fetch("https://7c60k1qy3e.execute-api.us-east-1.amazonaws.com/claireContactEmail", {
-    //     method: 'POST',
-    //     headers: {
-    //         'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(customerData)
-    // })
-
     const response = await fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-7f9d389b-2adf-444a-b487-296f7b849e6c/sendGrid/emails", {
         method: 'POST',
         headers: {
@@ -39,11 +31,11 @@ const handleSubmit = async (event) => {
     })
 
 
-    if (!response.ok) {
+    if (!response === 'success') {
         alert('There was an error sending the form. Please try again. If the problem persists, please email me directly at claire@pawsplays.com')
     } else {
-        console.log(response.json())
-        // window.location.href = '/thankYou.html'
+        console.log(response)
+        window.location.href = '/thankYou.html'
     }
 
 }
