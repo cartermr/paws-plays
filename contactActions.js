@@ -30,12 +30,12 @@ const handleSubmit = async (event) => {
     //     body: JSON.stringify(customerData)
     // })
 
-    const response = await fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-7f9d389b-2adf-444a-b487-296f7b849e6c/default/sendEmail", {
+    const response = await fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-7f9d389b-2adf-444a-b487-296f7b849e6c/sendGrid/emails", {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(customerData)
+        body: JSON.stringify({ data: customerData })
     })
 
 
