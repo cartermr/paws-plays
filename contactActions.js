@@ -42,7 +42,8 @@ const handleSubmit = async (event) => {
     if (!response.ok) {
         alert('There was an error sending the form. Please try again. If the problem persists, please email me directly at claire@pawsplays.com')
     } else {
-        window.location.href = '/thankYou.html'
+        console.log(response.json())
+        // window.location.href = '/thankYou.html'
     }
 
 }
